@@ -1,105 +1,33 @@
-# 双指针（更新中......）Two_Pointers（Updating......）
+# 🔄 双指针 (Two Pointers)
 
-*文档包含汉字和转义英文两个版本，请你选择合适的详细查看（英文版在文档尾部）*
+## 💡 个人见解
+通常是指在序列（数组或链表）中定义两个指针（或索引），通过某种策略（通常是往中间靠拢，或者同向快慢移动）来遍历数据结构。它往往是**多层嵌套循环（暴力破解 O(n²)）的优化解法**，可以将时间复杂度降低到 O(n) 或 O(n log n)（含排序）。
 
-*The document contains both Chinese characters and translated English versions. Please choose the appropriate one for detailed review (the English version is at the end of the document)*
+## 🎯 适用题型
+- 序列（尤其是有序序列）中需要操作多个元素（如两数之和、三数之和）。
+- 数组元素的移动、覆盖与删除（如移动零、删除重复项）。
+- 链表相关的操作（如寻找环、寻找倒数第 K 个节点）。
+- 正常暴力解法极其耗时，需要降低时间复杂度时，优先考虑双指针。
 
+## ⚠️ 使用注意与优化敲门
+1. **一定先排序！**（针对大部分数组求和类题目，排序后能利用单调性快速调整指针，但要注意排序会改变原数组索引）。
+2. **判断条件的选择**：`left < right` 还是 `left <= right`，取决于题目是要求不重合还是允许重合。
+3. **双指针的边界问题**：指针移动时极易越界，每次循环必须严格校验边界。
+4. **多数据降维**：如果是多个数据，通常做法是**固定一个数据，操作其他数据**，把 N 数之和降解为 2 数之和。
+5. **巧用单调性剪枝**：如三数之和中，排序后如果固定元素已经大于 0，则后续双指针之和不可能为 0，直接 break 结束。
 
+## 🕳️ 踩过的坑与错题本
+- **坑1：去重逻辑写错**。在求和的题目中，遇到符合条件的元组后，必须让 `left` 和 `right` 跳过所有重复元素，否则答案中会出现重复解。
+- **坑2：指针越界**。在循环体内移动指针时，必须先检查 `left < right`，否则会导致 `IndexError`。
+- **坑3：死循环**。在判断条件中，如果两个指针指向的元素相等，必须有让指针移动的逻辑，否则会陷入死循环。
 
-## 个人定义：
+## 📝 题目列表
+*本目录下的 `.py` 文件遵循统一注释模板。*
 
-通常在序列中的首尾各添加一个指针，两端操作序列，相互移动靠近，往往是多层嵌套循环的优化解法。
+| 题号 | 题目                                             | 难度 | 核心考点         |
+| :--- | :----------------------------------------------- | :--- | :--------------- |
+| 88   | [合并两个有序数组](./0088_Merge_Sorted_Array.py) | 简单 | 逆向双指针       |
+| 15   | [三数之和](./0015_3Sum.py)                       | 中等 | 排序+双指针+去重 |
 
-## 适用题型：
-
-在有序的序列中需要操作多个元素，正常解法一般是暴力破解，极其耗时。此时考虑双指针
-
-## 使用注意：
-
-一定先排序！注意判断条件的选择，双指针迭代的边界问题，如果是多个数据需要固定一个数据，操作其他数据以达到更好的效果。
-
-## 代表题目：
-
-### LeetCode：
-
-[88. 合并两个有序数组](https://leetcode.cn/problems/merge-sorted-array/)
-
-[15. 三数之和](https://leetcode.cn/problems/3sum/)
-
-## 错题本：
-
-### [15. 三数之和](https://leetcode.cn/problems/3sum/)【双指针使用前需要排序】
-
-```python
-while left<right:
-    s=temp[left]+temp[right]+temp[v]
-    if s==0:
-        res.append([+temp[v],temp[left],temp[right]])
-        while left<right and temp[left]==temp[left+1]:
-            left+=1
-        while left<right and temp[right]==temp[right-1]:
-            right-=1
-        left+=1
-        right-=1
-    elif s<0:
-        left+=1
-    else:
-        right-=1
-```
-
-优化：巧用0，一般遍历到固定元素大于0，则可以直接结束
-
-陷阱：重复元素添加到答案中，指针越界
-
-
-
-
-
-------
-
-
-
-## Personal definition:
-
-Usually, a pointer is added at the beginning and end of the sequence, and the two ends operate on the sequence, moving closer to each other. This is often an optimized solution for multi-layer nested loops.
-
-## Applicable question types:
-
-When multiple elements need to be operated in an ordered sequence, the normal solution is usually brute force, which is extremely time-consuming. At this time, consider using double pointers
-
-## Usage Notes:
-
-Sorting must be done first! Pay attention to the selection of judgment conditions, the boundary issues of double-pointer iteration, and if there are multiple data points, fix one data point while operating on the other data points to achieve better results.
-
-## Representative topic:
-
-### LeetCode：
-
-[88. Merge Two Sorted Arrays](https://leetcode.cn/problems/merge-sorted-array/)
-
-[15. Three Sum](https://leetcode.cn/problems/3sum/)
-
-## Error Log:
-
-### [15. 三数之和](https://leetcode.cn/problems/3sum/)【The double pointer needs to be sorted before use】
-
-```python
-while left<right:
-    s=temp[left]+temp[right]+temp[v]
-    if s==0:
-        res.append([+temp[v],temp[left],temp[right]])
-        while left<right and temp[left]==temp[left+1]:
-            left+=1
-        while left<right and temp[right]==temp[right-1]:
-            right-=1
-        left+=1
-        right-=1
-    elif s<0:
-        left+=1
-    else:
-        right-=1
-```
-
-Optimization: Make clever use of 0. Generally, if the fixed element encountered during traversal is greater than 0, the process can be directly terminated
-
-Trap: Duplicate elements are added to the answer, causing pointer overflow
+---
+*持续更新中，欢迎指点。*
