@@ -13,10 +13,6 @@
 时间复杂度：O(n^2) —— 外层遍历 O(n)，内层双指针 O(n)。
 空间复杂度：O(1) —— 不考虑排序所需的栈空间，仅用常数个变量。
 """
-
-from typing import List
-
-
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         # 排序：为去重和双指针移动提供单调性
