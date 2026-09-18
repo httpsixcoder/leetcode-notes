@@ -25,14 +25,14 @@ class Solution:
         closest = sum(sorted_nums[:3])
         for i in range(n - 2):
             # 剪枝，最小的三个数的和已经大于target，则break
-            min_sum=sorted_nums[i]+sorted_nums[i+1]+sorted_nums[i+2]
-            if min_sum>target:
+            min_sum = sorted_nums[i] + sorted_nums[i + 1] + sorted_nums[i + 2]
+            if min_sum > target:
                 if abs(target - min_sum) < abs(target - closest):
                     closest = min_sum
                 break
             # 剪枝，最大的三个数的和已经小于target，则continue
-            max_sum=sorted_nums[i]+sorted_nums[n-2]+sorted_nums[n-1]
-            if max_sum<target:
+            max_sum = sorted_nums[i] + sorted_nums[n - 2] + sorted_nums[n - 1]
+            if max_sum < target:
                 if abs(target - max_sum) < abs(target - closest):
                     closest = max_sum
                 continue

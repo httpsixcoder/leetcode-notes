@@ -21,50 +21,50 @@
 
 class Solution:
     def fourSum(self, nums: list[int], target: int) -> list[list[int]]:
-        sort_num=sorted(nums)
-        res=[]
-        n=len(sort_num)
-        fir=0
-        while fir<n-3:
+        sort_num = sorted(nums)
+        res = []
+        n = len(sort_num)
+        fir = 0
+        while fir < n - 3:
             # 剪枝min
-            min_all=sort_num[fir]+sort_num[fir+1]+sort_num[fir+2]+sort_num[fir+3]
-            if min_all>target:
+            min_all = sort_num[fir] + sort_num[fir + 1] + sort_num[fir + 2] + sort_num[fir + 3]
+            if min_all > target:
                 break
             # 剪枝max 并且去重
-            max_all=sort_num[fir]+sort_num[n-1]+sort_num[n-2]+sort_num[n-3]
-            if max_all<target or (fir>0 and sort_num[fir]==sort_num[fir-1]):
-                fir+=1
+            max_all = sort_num[fir] + sort_num[n - 1] + sort_num[n - 2] + sort_num[n - 3]
+            if max_all < target or (fir > 0 and sort_num[fir] == sort_num[fir - 1]):
+                fir += 1
                 continue
-            sec=fir+1
-            while sec<n-2:
+            sec = fir + 1
+            while sec < n - 2:
                 # 剪枝min
-                min_all=sort_num[fir]+sort_num[sec]+sort_num[sec+1]+sort_num[sec+2]
-                if min_all>target:
+                min_all = sort_num[fir] + sort_num[sec] + sort_num[sec + 1] + sort_num[sec + 2]
+                if min_all > target:
                     break
                 # 剪枝max 并且去重
-                max_all=sort_num[fir]+sort_num[sec]+sort_num[n-1]+sort_num[n-2]
-                if max_all<target or (sec>fir+1 and sort_num[sec]==sort_num[sec-1]):
-                    sec+=1
+                max_all = sort_num[fir] + sort_num[sec] + sort_num[n - 1] + sort_num[n - 2]
+                if max_all < target or (sec > fir + 1 and sort_num[sec] == sort_num[sec - 1]):
+                    sec += 1
                     continue
-                left=sec+1
-                right=n-1
-                while left<right:
-                    s=sort_num[fir]+sort_num[sec]+sort_num[left]+sort_num[right]
-                    if s==target :
-                        res.append([sort_num[fir],sort_num[sec],sort_num[left],sort_num[right]])
+                left = sec + 1
+                right = n - 1
+                while left < right:
+                    s = sort_num[fir] + sort_num[sec] + sort_num[left] + sort_num[right]
+                    if s == target:
+                        res.append([sort_num[fir], sort_num[sec], sort_num[left], sort_num[right]])
                         # 去重
-                        while left<right and sort_num[left]==sort_num[left+1]:
-                            left+=1
+                        while left < right and sort_num[left] == sort_num[left + 1]:
+                            left += 1
                         # 去重
-                        while right>right and sort_num[right]==sort_num[right-1]:
-                            right-=1
-                        left+=1
-                        right-=1
-                    elif s>target:
-                        right-=1
+                        while right > right and sort_num[right] == sort_num[right - 1]:
+                            right -= 1
+                        left += 1
+                        right -= 1
+                    elif s > target:
+                        right -= 1
                     else:
-                        left+=1
-                sec+=1
-            fir+=1
+                        left += 1
+                sec += 1
+            fir += 1
         return res
         # return list(set(res))  # res里面的每一个元素都是list是不可哈希的，所以会报错
