@@ -40,7 +40,7 @@
 | 26   | [删除有序数组中的重复项](./leetcode_0026_Remove_Duplicates.py) | 简单 | 双指针（快慢指针）               |
 | 27   | [移除元素](./leetcode_0027_Remove_Element.py)                | 简单 | 双指针                           |
 | 31   | [下一个排列](./leetcode_0031_Next_Permutation.py)            | 中等 | 广义双指针（类似字典序下一排列） |
-| 42   | [接雨水](./leetcode_0042_Trapping_Rain_Water.py)             | 苦难 | 双指针（动态规划）               |
+| 42   | [接雨水](./leetcode_0042_Trapping_Rain_Water.py)             | 困难 | 双指针（动态规划）               |
 | 88   | [合并两个有序数组](./leetcode_0088_Merge_Sorted_Array.py)    | 简单 | 逆向双指针                       |
 
 ---
