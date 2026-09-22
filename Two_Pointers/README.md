@@ -44,6 +44,7 @@
 | 42   | [接雨水](./leetcode_0042_Trapping_Rain_Water.py)             | 困难 | 双指针（动态规划）               |
 | 75   | [颜色分类](leetcode_0075_Sort_color.py)                      | 中等 | 双指针（三指针），冒泡，排序     |
 | 88   | [合并两个有序数组](./leetcode_0088_Merge_Sorted_Array.py)    | 简单 | 逆向双指针                       |
+| 167  | [两数之和2](leetcode_0167_Two_Sum2.py)                       | 中等 | 双指针，二分查找                 |
 
 ---
 *持续更新中，欢迎指点。*
