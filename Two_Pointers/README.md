@@ -43,9 +43,11 @@
 | 31   | [下一个排列](./leetcode_0031_Next_Permutation.py)            | 中等 | 广义双指针（类似字典序下一排列） |
 | 42   | [接雨水](./leetcode_0042_Trapping_Rain_Water.py)             | 困难 | 双指针（动态规划）               |
 | 75   | [颜色分类](leetcode_0075_Sort_color.py)                      | 中等 | 双指针（三指针），冒泡，排序     |
-| 80   | [快慢指针](leetcode_0080_Remove_Duplicates_from_Array2.py)   | 中等 | 双指针                           |
+| 80   | [删除有序数组中的重复项2](leetcode_0080_Remove_Duplicates_from_Array2.py) | 中等 | 快慢双指针                       |
 | 88   | [合并两个有序数组](./leetcode_0088_Merge_Sorted_Array.py)    | 简单 | 逆向双指针                       |
 | 167  | [两数之和2](leetcode_0167_Two_Sum2.py)                       | 中等 | 双指针，二分查找                 |
+| 283  | [移动零](leetcode_0283_Mover_Zero.py)                        | 简单 | 快慢双指针                       |
 
 ---
 *持续更新中，欢迎指点。*
+
