@@ -21,7 +21,7 @@
 | 算法类型 | 目录链接                            | 题量 | 状态     |
 | :------- | :---------------------------------- | ---- | :------- |
 | 双指针   | [Two_Pointers](./Two_Pointers/)     | 13   | ✅ 已完成 |
-| 滑动窗口 | [Sliding_Window](./Sliding_Window/) | 0    | 🟢 更新中 |
+| 滑动窗口 | [Sliding_Window](./Sliding_Window/) | 1    | 🟢 更新中 |
 | 数组     | [Array](./Array/)                   |      | ⚪ 待补充 |
 | 哈希表   | [Hash_Table](./Hash_Table/)         |      | ⚪ 待补充 |
 
