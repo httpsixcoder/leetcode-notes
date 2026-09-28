@@ -151,6 +151,7 @@ for right in range(k, len(s)):
 | 题号 | 题目                                                         | 难度 | 核心考点         |
 | :--- | :----------------------------------------------------------- | :--- | :--------------- |
 | 219  | [存在重复元素 II](./leetcode_0219_Contains_Duplicate2.py)    | 简单 | 滑动窗口，哈希表 |
+| 594  | [最长和谐子序列](./leetcode_0594_Longest_Harmonious_Subsequence.py) | 简单 | 滑动窗口，哈希表 |
 | 643  | [子数组最大平均数 I](./leetcode_0643_Maximum_Average_Subarray1.py) | 简单 | 滑动窗口         |
 
 ------
